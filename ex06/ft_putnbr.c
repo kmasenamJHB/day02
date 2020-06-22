@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmasenam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/18 09:22:42 by kmasenam          #+#    #+#             */
-/*   Updated: 2020/06/22 08:48:57 by kmasenam         ###   ########.fr       */
+/*   Created: 2020/06/19 10:10:51 by kmasenam          #+#    #+#             */
+/*   Updated: 2020/06/22 10:10:48 by kmasenam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_putchar(char c);
+int ft_putchar(char c);
 
-void ft_print_alphabet(void)
+void ft_putnbr(int nbr)
 {
-	int i;
-	i = 97;
-
-	while(i <= 122)
+	if(nbr< 0)
 	{
-		ft_putchar(i);
-		i = i + 1;
+		ft_putchar('-');
+		nbr = -nbr;
 	}
+	if(nbr/10 > 0)
+	{
+		ft_putnbr(nbr/10);
+	}
+	ft_putchar(nbr%10 + 48);
 }
